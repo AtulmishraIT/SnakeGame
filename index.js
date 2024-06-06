@@ -1,3 +1,9 @@
+// Game buttons for mobiles
+const up = document.querySelector("#up");
+const down = document.querySelector("#down");
+const left = document.querySelector("#left");
+const right = document.querySelector("#right");
+
 // Game Constants & Variables
 let inputDir = {x: 0, y: 0}; 
 const foodSound = new Audio('food.mp3');
@@ -103,7 +109,6 @@ function gameEngine(){
 
 
 // Main logic starts here
-musicSound.play();
 let hiscore = localStorage.getItem("hiscore");
 if(hiscore === null){
     hiscoreval = 0;
@@ -115,6 +120,34 @@ else{
 }
 
 window.requestAnimationFrame(main);
+up.addEventListener("click",() => {
+    inputDir = {x: 0, y: 1} // Start the game
+    moveSound.play();
+    console.log("ArrowUp");
+    inputDir.x = 0;
+    inputDir.y = -1;
+})
+down.addEventListener("click",() => {
+    inputDir = {x: 0, y: 1} // Start the game
+    moveSound.play();
+    console.log("ArrowDown");
+    inputDir.x = 0;
+    inputDir.y = 1;
+})
+left.addEventListener("click",() => {
+    inputDir = {x: 0, y: 1} // Start the game
+    moveSound.play();
+    console.log("ArrowLeft");
+    inputDir.x = -1;
+    inputDir.y = 0;
+})
+right.addEventListener("click",() => {
+    inputDir = {x: 0, y: 1} // Start the game
+    moveSound.play();
+    console.log("ArrowRight");
+    inputDir.x = 1;
+    inputDir.y = 0;
+})
 window.addEventListener('keydown', e =>{
     inputDir = {x: 0, y: 1} // Start the game
     moveSound.play();
@@ -145,5 +178,6 @@ window.addEventListener('keydown', e =>{
         default:
             break;
     }
-
+    
+    
 });
