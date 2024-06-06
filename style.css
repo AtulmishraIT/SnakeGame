@@ -76,6 +76,7 @@
 }
 
 .buttons{
+    position: relative;
     display: grid;
     grid-template-rows: repeat(3,1fr);
     grid-template-columns: repeat(3,1fr);
@@ -86,6 +87,7 @@
 }
 
 .buttons button{
+    position: relative;
     border-radius: 10px;
     height: 10vh;
     width: 10vh;
@@ -95,6 +97,7 @@
 
 
 .buttons #none{
+    position: relative;
     background-color: transparent;
     border: none;
 }
